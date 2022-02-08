@@ -1,5 +1,15 @@
+@font-face {
+  font-family: "Lato";
+  src: url(/src/assets/Lato/Lato-Regular.ttf) format("ttf");
+  font-weight: 400;
+}
+
 body {
   font-family: "Lato", sans-serif;
+}
+
+main {
+  background: #e4e1e1;
 }
 
 h1,
@@ -33,9 +43,13 @@ ul {
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1440px;
   padding-left: 15px;
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.is-active {
+  border-bottom: 1px solid #fff;
 }

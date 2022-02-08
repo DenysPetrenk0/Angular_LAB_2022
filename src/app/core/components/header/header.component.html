@@ -1,0 +1,34 @@
+<header class="header container">
+  <a [routerLink]="['./courses']" class="header__logo">
+    <svg class="header__logo__icon">
+      <use xlink:href="/assets/sprite.svg#play"></use>
+      <linearGradient id="linear-gradient" x2="0" y2="100%">
+        <stop offset="0%" stop-color="#41cde6" />
+        <stop offset="100%" stop-color="#bae641" />
+      </linearGradient>
+    </svg>
+    video course
+    <img src="" alt="" />
+  </a>
+  <nav class="header__navigation">
+    <ul class="header__navigation__list">
+      <li class="header__navigation__item">
+        <a
+          class="header__navigation__link"
+          routerLink="/courses"
+          routerLinkActive="is-active"
+        >
+          Courses
+        </a>
+      </li>
+      <li class="header__navigation__item">
+        <a
+          class="header__navigation__link"
+          routerLink="/about"
+          routerLinkActive="is-active"
+          >About</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>

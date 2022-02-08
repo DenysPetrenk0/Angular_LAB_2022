@@ -29,8 +29,7 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/styles.scss",
-              "node_modules/modern-normalize/modern-normalize.css",
-              "node_modules/lato-font/scss/lato-font.scss"
+              "node_modules/modern-normalize/modern-normalize.css"
             ],
             "scripts": []
           },
