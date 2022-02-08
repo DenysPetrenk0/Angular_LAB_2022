@@ -1,0 +1,36 @@
+<li class="courses__item">
+  <div class="courses__item__content">
+    <p class="courses__item__title">{{ item.title }}</p>
+    <p class="courses__item__text">
+      {{ item.text }}
+    </p>
+    <div class="courses__item__discr">
+      <svg class="courses__item__discr__icon">
+        <use xlink:href="/assets/sprite.svg#clock"></use>
+      </svg>
+      <p class="courses__item__discr__text">{{ item.time }}</p>
+      <svg class="courses__item__discr__icon">
+        <use xlink:href="/assets/sprite.svg#calendar"></use>
+      </svg>
+      <p class="courses__item__discr__text">{{ item.date }}</p>
+    </div>
+  </div>
+  <div class="courses__item__buttons">
+    <button class="courses__item__button button" type="button">
+      <svg class="courses__item__icon">
+        <use xlink:href="/assets/sprite.svg#pencil"></use>
+      </svg>
+      Edit
+    </button>
+    <button
+      class="courses__item__button button"
+      type="button"
+      (click)="handleDelete()"
+    >
+      <svg class="courses__item__icon">
+        <use xlink:href="/assets/sprite.svg#bin"></use>
+      </svg>
+      Delete
+    </button>
+  </div>
+</li>

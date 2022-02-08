@@ -1,0 +1,22 @@
+<section class="courses container">
+  <div class="courses__search__box">
+    <input class="courses__search" type="text" placeholder="Text for search" />
+    <svg class="courses__search__icon">
+      <use xlink:href="/assets/sprite.svg#search"></use>
+    </svg>
+  </div>
+  <button class="courses__add button" [routerLink]="['./add']" type="button">
+    <svg class="courses__add__icon">
+      <use xlink:href="/assets/sprite.svg#plus"></use>
+    </svg>
+    Add course
+  </button>
+  <ul class="courses__list">
+    <app-cours-item
+      *ngFor="let course of courses"
+      [item]="course"
+      (deleted)="hendleDelete($event)"
+    ></app-cours-item>
+  </ul>
+  <button class="courses__load-more" type="button">load more</button>
+</section>
