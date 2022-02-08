@@ -4,6 +4,7 @@ import { CoursesComponent } from './containers/courses/courses.component';
 import { CoursesRoutingModule } from './courses-routing.module';
 import { CourseComponent } from './containers/course/course.component';
 import { CoursFormComponent } from './components/cours-form/cours-form.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -11,10 +12,10 @@ import { CoursFormComponent } from './components/cours-form/cours-form.component
   declarations: [
     CoursesComponent,
     CourseComponent,
-    CoursFormComponent
+    CoursFormComponent,
   ],
   imports: [
-    CommonModule, CoursesRoutingModule
+    CommonModule, CoursesRoutingModule, SharedModule
   ]
 })
 export class CoursesModule { }

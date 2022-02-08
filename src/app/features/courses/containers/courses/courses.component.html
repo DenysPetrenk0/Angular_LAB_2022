@@ -12,110 +12,11 @@
     Add course
   </button>
   <ul class="courses__list">
-    <li class="courses__item">
-      <div class="courses__item__content">
-        <p class="courses__item__title">duis mollit reprehenderit ad</p>
-        <p class="courses__item__text">
-          Est minim ea aute sunt laborum minim eu excepteur. Culpa sint
-          exercitation mollit enim ad culpa aliquip laborum cillum. Dolor
-          officia culpa labore ex eiusmod ut est ea voluptate ea nostrud.
-        </p>
-        <div class="courses__item__discr">
-          <svg class="courses__item__discr__icon">
-            <use xlink:href="/assets/sprite.svg#clock"></use>
-          </svg>
-          <p class="courses__item__discr__text">2h 37min</p>
-          <svg class="courses__item__discr__icon">
-            <use xlink:href="/assets/sprite.svg#calendar"></use>
-          </svg>
-          <p class="courses__item__discr__text">28 Sep, 2017</p>
-        </div>
-      </div>
-      <div class="courses__item__buttons">
-        <button class="courses__item__button button" type="button">
-          <svg class="courses__item__icon">
-            <use xlink:href="/assets/sprite.svg#pencil"></use>
-          </svg>
-          Edit
-        </button>
-        <button class="courses__item__button button" type="button">
-          <svg class="courses__item__icon">
-            <use xlink:href="/assets/sprite.svg#bin"></use>
-          </svg>
-          Delete
-        </button>
-      </div>
-    </li>
-    <li class="courses__item">
-      <div class="courses__item__content">
-        <p class="courses__item__title">magna excepteur aute deserunt</p>
-        <p class="courses__item__text">
-          Sunt culpa officia minim commodo eiusmod irure sunt nostrud. Mollit
-          aliquip id occaecat officia prodent anim dolor officia qui voluptate
-          consectetur laborum. Duis incididunt culpa aliqua mollit do fugiat ea
-          dolor mollit trure Lorem tempor
-        </p>
-        <div class="courses__item__discr">
-          <svg class="courses__item__discr__icon">
-            <use xlink:href="/assets/sprite.svg#clock"></use>
-          </svg>
-          <p class="courses__item__discr__text">3h 27min</p>
-          <svg class="courses__item__discr__icon">
-            <use xlink:href="/assets/sprite.svg#calendar"></use>
-          </svg>
-          <p class="courses__item__discr__text">31 May, 2016</p>
-        </div>
-      </div>
-      <div class="courses__item__buttons">
-        <button class="courses__item__button button" type="button">
-          <svg class="courses__item__icon">
-            <use xlink:href="/assets/sprite.svg#pencil"></use>
-          </svg>
-          Edit
-        </button>
-        <button class="courses__item__button button" type="button">
-          <svg class="courses__item__icon">
-            <use xlink:href="/assets/sprite.svg#bin"></use>
-          </svg>
-          Delete
-        </button>
-      </div>
-    </li>
-    <li class="courses__item">
-      <div class="courses__item__content">
-        <p class="courses__item__title">magna excepteur aute deserunt</p>
-        <p class="courses__item__text">
-          Sunt culpa officia minim commodo eiusmod irure sunt nostrud. Mollit
-          aliquip id occaecat officia prodent anim dolor officia qui voluptate
-          consectetur laborum. Duis incididunt culpa aliqua mollit do fugiat ea
-          dolor mollit trure Lorem tempor
-        </p>
-        <div class="courses__item__discr">
-          <svg class="courses__item__discr__icon">
-            <use xlink:href="/assets/sprite.svg#clock"></use>
-          </svg>
-          <p class="courses__item__discr__text">3h 27min</p>
-          <svg class="courses__item__discr__icon">
-            <use xlink:href="/assets/sprite.svg#calendar"></use>
-          </svg>
-          <p class="courses__item__discr__text">31 May, 2016</p>
-        </div>
-      </div>
-      <div class="courses__item__buttons">
-        <button class="courses__item__button button" type="button">
-          <svg class="courses__item__icon">
-            <use xlink:href="/assets/sprite.svg#pencil"></use>
-          </svg>
-          Edit
-        </button>
-        <button class="courses__item__button button" type="button">
-          <svg class="courses__item__icon">
-            <use xlink:href="/assets/sprite.svg#bin"></use>
-          </svg>
-          Delete
-        </button>
-      </div>
-    </li>
+    <app-cours-item
+      *ngFor="let course of courses"
+      [item]="course"
+      (deleted)="hendleDelete($event)"
+    ></app-cours-item>
   </ul>
   <button class="courses__load-more" type="button">load more</button>
 </section>
