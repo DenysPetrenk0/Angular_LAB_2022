@@ -1,0 +1,75 @@
+<form action="#" class="add__form">
+  <p class="add__title">New course:</p>
+  <label class="add__form__field">
+    <span class="add__form__box">
+      <span class="add__form__text">Title:</span>
+      <span class="add__form__text__second">required</span>
+    </span>
+    <span class="add__form__wrapper">
+      <input
+        type="text"
+        class="add__form__input"
+        name="course-title"
+        placeholder="Some title..."
+        required
+      />
+    </span>
+  </label>
+  <label class="add__form__field">
+    <span class="add__form__box">
+      <span class="add__form__text">Description:</span>
+      <span class="add__form__text__second">required</span>
+    </span>
+    <textarea
+      name="coutse-description"
+      class="add__form__input"
+      placeholder="Description..."
+    ></textarea>
+  </label>
+  <label class="add__form__field">
+    <span class="add__form__box add__form__box__date">
+      <span class="add__form__text">Duration:</span>
+      <span class="add__form__text__second">required</span>
+    </span>
+    <span class="add__form__wrapper">
+      <input
+        type="text"
+        class="add__form__duration"
+        name="course-duration"
+        placeholder="0"
+        required
+      />
+    </span>
+  </label>
+  <label class="add__form__field">
+    <span class="add__form__box add__form__box__date">
+      <span class="add__form__text">Date:</span>
+      <span class="add__form__text__second">required</span>
+    </span>
+    <span class="add__form__wrapper">
+      <input
+        type="text"
+        class="add__form__duration"
+        name="course-date"
+        placeholder="18.02.2020"
+        required
+      />
+    </span>
+  </label>
+  <label class="add__form__field">
+    <span class="add__form__text">Authors:</span>
+    <span class="add__form__wrapper">
+      <select
+        class="add__form__input add__form__select"
+        name="course-author"
+        id="course-author"
+      >
+        <option value="author1" selected>Author1</option>
+      </select>
+    </span>
+  </label>
+  <span class="add__form__buttons">
+    <button type="submit" class="add__form__buttons__white">Cansel</button>
+    <button type="submit" class="add__form__buttons__black">Save</button>
+  </span>
+</form>
