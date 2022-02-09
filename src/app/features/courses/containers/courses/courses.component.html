@@ -12,6 +12,7 @@
     Add course
   </button>
   <ul class="courses__list">
+    <app-loader></app-loader>
     <app-cours-item
       *ngFor="let course of courses"
       [item]="course"

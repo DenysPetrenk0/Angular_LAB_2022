@@ -1,3 +1,5 @@
+import { catchError, of, tap } from 'rxjs';
+import { LoaderService } from 'src/app/features/courses/services/loader.service';
 import { Injectable } from '@angular/core';
 import { CoursesApiService } from 'src/app/core/services/courses/courses-api.service';
 
@@ -6,10 +8,16 @@ import { CoursesApiService } from 'src/app/core/services/courses/courses-api.ser
 })
 export class CoursesService {
 
-  constructor(private coursesApiService: CoursesApiService) { }
+  constructor(private coursesApiService: CoursesApiService, private loaderService: LoaderService) { }
 
   getPosts() {
-    return this.coursesApiService.getPosts();
+    this.loaderService.show()
+    return this.coursesApiService.getPosts()
+      .pipe(tap(() => { this.loaderService.hide() }),
+        catchError((error) => {
+          this.loaderService.hide();
+          return of(error)
+        }));
   }
 
   deletePost(id: number) {
