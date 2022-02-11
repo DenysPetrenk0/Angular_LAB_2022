@@ -10,10 +10,15 @@ export class CoursItemComponent implements OnInit {
   @Input() item: any;
 
   @Output() deleted = new EventEmitter<any>();
+  @Output() edit = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  handleEdit() {
+    this.edit.emit(this.item.id)
   }
 
   handleDelete() {

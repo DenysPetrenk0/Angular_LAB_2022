@@ -1,6 +1,12 @@
 <section class="courses container">
+  <app-loader></app-loader>
   <div class="courses__search__box">
-    <input class="courses__search" type="text" placeholder="Text for search" />
+    <input
+      [formControl]="searchControl"
+      class="courses__search"
+      type="text"
+      placeholder="Text for search"
+    />
     <svg class="courses__search__icon">
       <use xlink:href="/assets/sprite.svg#search"></use>
     </svg>
@@ -11,11 +17,12 @@
     </svg>
     Add course
   </button>
+  <p class="courses__list__not-found" *ngIf="existed">Courses not found</p>
   <ul class="courses__list">
-    <app-loader></app-loader>
     <app-cours-item
       *ngFor="let course of courses"
       [item]="course"
+      (edit)="hendleEdit($event)"
       (deleted)="hendleDelete($event)"
     ></app-cours-item>
   </ul>

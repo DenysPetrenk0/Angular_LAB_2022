@@ -1,6 +1,8 @@
 export interface Course {
     title: string,
     text: string,
-    date: string,
-    time: string,
+    date: number,
+    time: number,
+    author: string,
+    id?: number
 }

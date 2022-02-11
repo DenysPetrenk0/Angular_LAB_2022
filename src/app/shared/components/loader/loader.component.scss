@@ -1,15 +1,21 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 .loader {
-  width: 1285px;
-  height: 456px;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   &-inner {
     width: 100px;
     height: 60px;
-    top: 40%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
   }
 
   &-line {

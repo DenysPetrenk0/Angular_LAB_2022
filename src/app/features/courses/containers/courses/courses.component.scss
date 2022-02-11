@@ -2,6 +2,16 @@
   padding-top: 70px;
   padding-bottom: 70px;
 
+  &__list {
+    min-height: 470px;
+
+    &__not-found {
+      text-align: center;
+      font-size: 24px;
+      color: #4b4d57;
+    }
+  }
+
   &__search {
     display: block;
     padding: 15px 40px;
@@ -51,6 +61,10 @@
     line-height: 1.25;
     text-transform: uppercase;
     cursor: pointer;
+
+    &:hover {
+      background: rgb(207, 204, 204);
+    }
   }
 }
 
@@ -66,4 +80,8 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+
+  &:hover {
+    background: #1d7b88;
+  }
 }

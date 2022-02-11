@@ -1,4 +1,3 @@
-import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { LoaderService } from 'src/app/features/courses/services/loader.service';
 

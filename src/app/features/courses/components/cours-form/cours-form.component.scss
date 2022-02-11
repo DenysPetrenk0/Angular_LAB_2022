@@ -91,6 +91,11 @@
         justify-content: center;
         cursor: pointer;
         margin-right: 15px;
+
+        &:hover {
+          background: #858383;
+          color: #c9c8c8;
+        }
       }
 
       &__black {
@@ -106,6 +111,11 @@
         align-items: center;
         justify-content: center;
         cursor: pointer;
+
+        &:hover:enabled {
+          background: #cfcdcd;
+          color: #999797;
+        }
       }
     }
   }

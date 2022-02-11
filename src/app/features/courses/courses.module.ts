@@ -1,10 +1,11 @@
+import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CoursesComponent } from './containers/courses/courses.component';
 import { CoursesRoutingModule } from './courses-routing.module';
 import { CourseComponent } from './containers/course/course.component';
-import { CoursFormComponent } from './components/cours-form/cours-form.component';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { CoursFormModule } from './components/cours-form/cours-form.module';
 
 
 
@@ -12,10 +13,14 @@ import { SharedModule } from 'src/app/shared/shared.module';
   declarations: [
     CoursesComponent,
     CourseComponent,
-    CoursFormComponent,
+
   ],
   imports: [
-    CommonModule, CoursesRoutingModule, SharedModule
+    CommonModule,
+    CoursesRoutingModule,
+    SharedModule,
+    CoursFormModule,
+    ReactiveFormsModule
   ]
 })
 export class CoursesModule { }

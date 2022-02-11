@@ -1,3 +1,8 @@
 <section class="add container">
-  <app-cours-form></app-cours-form>
+  <app-loader></app-loader>
+  <app-cours-form
+    [course]="course"
+    (save)="saveHandler($event)"
+    (edit)="editHandler($event)"
+  ></app-cours-form>
 </section>

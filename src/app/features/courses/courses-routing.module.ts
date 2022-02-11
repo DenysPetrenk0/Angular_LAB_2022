@@ -6,10 +6,16 @@ import { CoursesComponent } from "./containers/courses/courses.component";
 const routes: Routes = [{
     path: '',
     component: CoursesComponent
-}, {
+},
+{
     path: 'add',
     component: CourseComponent
-}];
+},
+{
+    path: ':id',
+    component: CourseComponent
+}
+];
 
 @NgModule({
     imports: [RouterModule.forChild(routes)],
