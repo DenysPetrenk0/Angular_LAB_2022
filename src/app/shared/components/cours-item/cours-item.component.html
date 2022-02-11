@@ -1,0 +1,44 @@
+<li class="courses__item" appDateType [valueDate]="item.date">
+  <div class="courses__item__content">
+    <div class="courses__item__discr">
+      <svg class="courses__item__discr__icon">
+        <use xlink:href="/assets/sprite.svg#clock"></use>
+      </svg>
+      <p class="courses__item__discr__text">
+        {{ item.duration | convertingTime }}
+      </p>
+      <svg class="courses__item__discr__icon">
+        <use xlink:href="/assets/sprite.svg#calendar"></use>
+      </svg>
+      <p class="courses__item__discr__text">
+        {{ item.date | date: "d MMM y" }}
+      </p>
+    </div>
+    <p class="courses__item__title">{{ item.title }}</p>
+    <p class="courses__item__text">
+      {{ item.description }}
+    </p>
+  </div>
+  <div class="courses__item__buttons">
+    <button
+      class="courses__item__button button"
+      type="button"
+      (click)="handleEdit()"
+    >
+      <svg class="courses__item__icon">
+        <use xlink:href="/assets/sprite.svg#pencil"></use>
+      </svg>
+      Edit
+    </button>
+    <button
+      class="courses__item__button button"
+      type="button"
+      (click)="handleDelete()"
+    >
+      <svg class="courses__item__icon">
+        <use xlink:href="/assets/sprite.svg#bin"></use>
+      </svg>
+      Delete
+    </button>
+  </div>
+</li>

@@ -1,0 +1,112 @@
+<form [formGroup]="courseForm" class="add__form">
+  <p class="add__title">New course:</p>
+  <label class="add__form__field">
+    <span class="add__form__box">
+      <span class="add__form__text">Title:</span>
+      <span
+        class="add__form__text__second"
+        *ngIf="courseForm.get('title')?.errors"
+        >required</span
+      >
+    </span>
+    <span class="add__form__wrapper">
+      <input
+        formControlName="title"
+        type="text"
+        class="add__form__input"
+        name="course-title"
+        placeholder="Some title..."
+      />
+    </span>
+  </label>
+  <label class="add__form__field">
+    <span class="add__form__box">
+      <span class="add__form__text">Description:</span>
+      <span
+        class="add__form__text__second"
+        *ngIf="courseForm.get('description')?.errors"
+        >required</span
+      >
+    </span>
+    <textarea
+      formControlName="description"
+      name="coutse-description"
+      class="add__form__input"
+      placeholder="Description..."
+    ></textarea>
+  </label>
+  <label class="add__form__field">
+    <span class="add__form__box add__form__box__date">
+      <span class="add__form__text">Duration:</span>
+      <span
+        class="add__form__text__second"
+        *ngIf="courseForm.get('duration')?.errors"
+        >required</span
+      >
+    </span>
+    <span class="add__form__wrapper">
+      <input
+        formControlName="duration"
+        type="text"
+        class="add__form__duration"
+        name="course-duration"
+        placeholder="0"
+        required
+      />
+    </span>
+  </label>
+  <label class="add__form__field">
+    <span class="add__form__box add__form__box__date">
+      <span class="add__form__text">Date:</span>
+      <span
+        class="add__form__text__second"
+        *ngIf="courseForm.get('date')?.errors"
+        >required</span
+      >
+    </span>
+    <span class="add__form__wrapper">
+      <input
+        formControlName="date"
+        type="text"
+        class="add__form__duration"
+        name="course-date"
+        placeholder="18.02.2020"
+        required
+      />
+    </span>
+  </label>
+  <label class="add__form__field">
+    <span class="add__form__text">Authors:</span>
+    <span class="add__form__wrapper">
+      <select
+        formControlName="author"
+        class="add__form__input add__form__select"
+        name="course-author"
+        id="course-author"
+      >
+        <option value="author1">Author1</option>
+        <option value="author2">Author2</option>
+        <option value="author3">Author3</option>
+      </select>
+    </span>
+  </label>
+  <span class="add__form__buttons">
+    <button class="add__form__buttons__white">Cansel</button>
+    <button
+      *ngIf="!existed"
+      [disabled]="courseForm.invalid"
+      (click)="onSave()"
+      class="add__form__buttons__black"
+    >
+      Save
+    </button>
+    <button
+      *ngIf="existed"
+      [disabled]="courseForm.invalid"
+      (click)="onEdit()"
+      class="add__form__buttons__black"
+    >
+      Edit
+    </button>
+  </span>
+</form>

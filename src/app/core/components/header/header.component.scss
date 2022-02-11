@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  justify-content: space-between;
+  background: #4b4d57;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    line-height: 1.2;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &__icon {
+      width: 35px;
+      height: 35px;
+      margin-right: 10px;
+      fill: url(#linear-gradient);
+    }
+  }
+
+  &__navigation {
+    &__list {
+      display: flex;
+    }
+
+    &__link {
+      margin-right: 15px;
+      font-size: 17px;
+      line-height: 1.2;
+      color: #fff;
+    }
+  }
+}
