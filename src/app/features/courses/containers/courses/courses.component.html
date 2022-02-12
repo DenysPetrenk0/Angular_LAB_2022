@@ -20,11 +20,18 @@
   <p class="courses__list__not-found" *ngIf="existed">Courses not found</p>
   <ul class="courses__list">
     <app-cours-item
-      *ngFor="let course of courses"
+      *ngFor="let course of courses$ | async"
       [item]="course"
       (edit)="hendleEdit($event)"
       (deleted)="hendleDelete($event)"
     ></app-cours-item>
   </ul>
-  <button class="courses__load-more" type="button">load more</button>
+  <button
+    (click)="hendlerLoadMore()"
+    [disabled]="existedLoadMore"
+    class="courses__load-more"
+    type="button"
+  >
+    load more
+  </button>
 </section>

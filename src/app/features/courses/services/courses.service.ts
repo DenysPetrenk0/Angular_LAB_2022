@@ -16,9 +16,9 @@ export class CoursesService {
     private router: Router
   ) { }
 
-  getPosts(): Observable<Course[]> {
+  getPosts(start: number = 0): Observable<Course[]> {
     this.loaderService.show()
-    return this.coursesApiService.getPosts()
+    return this.coursesApiService.getPosts(start)
       .pipe(tap(() => { this.loaderService.hide() }),
         catchError((error) => {
           this.loaderService.hide();

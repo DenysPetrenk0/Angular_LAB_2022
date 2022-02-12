@@ -1,25 +1,23 @@
+import { ActivatedRoute } from '@angular/router';
 import { Course } from 'src/app/core/models/course.model';
 import { CustomValidator } from './../../../../shared/validators/custom.validators';
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-cours-form',
   templateUrl: './cours-form.component.html',
-  styleUrls: ['./cours-form.component.scss']
+  styleUrls: ['./cours-form.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+
 })
 export class CoursFormComponent implements OnInit {
 
   existed: boolean = false;
   private id!: number;
 
-  @Input() set course(course: Course) {
-    if (course && course.id) {
-      this.id = course.id;
-      this.existed = true;
-      this.courseForm.patchValue(course);
-    }
-  }
+  @Input() course!: Course
+
   @Output() save = new EventEmitter<Course>();
   @Output() edit = new EventEmitter<Course>();
 
@@ -31,9 +29,16 @@ export class CoursFormComponent implements OnInit {
     author: ['', Validators.required],
   })
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    this.route.data.subscribe(data => {
+      this.courseForm.patchValue(data[0]);
+    }
+    )
   }
 
   onSave() {

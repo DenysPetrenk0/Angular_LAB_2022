@@ -62,7 +62,7 @@
     text-transform: uppercase;
     cursor: pointer;
 
-    &:hover {
+    &:hover:enabled {
       background: rgb(207, 204, 204);
     }
   }

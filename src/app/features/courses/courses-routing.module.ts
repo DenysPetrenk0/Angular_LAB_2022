@@ -1,3 +1,4 @@
+import { DataFormResolver } from './resolvers/data-form.resolver';
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { CourseComponent } from "./containers/course/course.component";
@@ -13,7 +14,8 @@ const routes: Routes = [{
 },
 {
     path: ':id',
-    component: CourseComponent
+    component: CourseComponent,
+    resolve: [DataFormResolver]
 }
 ];
 

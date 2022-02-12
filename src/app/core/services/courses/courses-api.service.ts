@@ -7,12 +7,17 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
+
 export class CoursesApiService {
 
   constructor(private http: HttpClient) { }
 
-  getPosts(): Observable<Course[]> {
-    return this.http.get<Course[]>(`posts`);
+  getPosts(start: number = 0): Observable<Course[]> {
+    const params = {
+      "_limit": 3,
+      "_start": start
+    }
+    return this.http.get<Course[]>(`posts`, { params: params });
   }
 
   getCourseById(id: number): Observable<Course> {
